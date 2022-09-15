@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+// find prime numbers in a range.
+
+int main()
+{
+    int start, end, flag = 0;// start --> first value of the range; end --> last value of the range; flag 0 means prime (truth)
+    printf("enter start: ");
+    scanf("%d", &start);
+    printf("Enter end: ");
+    scanf("%d", &end);
+
+    for(int i=start; i<=end; i++){
+        if(i==1){
+            flag = 1;
+        }
+        else
+            flag = 0;
+        for(int j=2; j<=i/2; j++){
+            if(i%j == 0){
+                flag = 1;
+                break;
+            }
+        }
+        if(flag==0)
+            printf("%d\n", i);
+    }
+    return 0;
+}
